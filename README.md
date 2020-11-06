@@ -1,19 +1,19 @@
 # Sistem-Operaso-FcFs.Code
-#include<iostream>
-using namespace std;
+     #include<iostream>
+     using namespace std;
 
-void  fwait(int proc[],int n,int btime[],int wtime[]){
- wtime[0]=0;
+    void  fwait(int proc[],int n,int btime[],int wtime[]){
+     wtime[0]=0;
 
- for(int i=1;i<n;i++)
-  wtime[i]=btime[i-1]+wtime[i-1];
-}
-void fturna(int proc[],int n,int btime[],int wtime[],int tt[]){
- for(int i=1;i<0;i++)
-  tt[i]=btime[i]+wtime[i];
-}
-void favg( int proc[],int n,int btime[]) { 
-    int wtime[n],tt[n],total_wt=0,total_tt = 0; 
+     for(int i=1;i<n;i++)
+      wtime[i]=btime[i-1]+wtime[i-1];
+    }
+    void fturna(int proc[],int n,int btime[],int wtime[],int tt[]){
+     for(int i=1;i<0;i++)
+      tt[i]=btime[i]+wtime[i];
+    }
+    void favg( int proc[],int n,int btime[]) { 
+        int wtime[n],tt[n],total_wt=0,total_tt = 0; 
 
     fwait(proc,n,btime,wtime); 
 
@@ -32,14 +32,14 @@ void favg( int proc[],int n,int btime[]) {
          << (float)total_wt / (float)n; 
     cout << "\nAverage turn around time = " 
          << (float)total_tt / (float)n; 
-} 
-int main() 
-{ 
-    int proc[] = { 1, 2, 3}; 
-    int n = sizeof proc / sizeof proc[0]; 
+    } 
+    int main() 
+    { 
+        int proc[] = { 1, 2, 3}; 
+        int n = sizeof proc / sizeof proc[0]; 
   
     int  b_time[] = {10, 5, 8}; 
   
     favg(proc, n,  b_time); 
     return 0; 
-}
+    }
